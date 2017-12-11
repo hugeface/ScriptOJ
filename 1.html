@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>#1 用 React.js 在页面上渲染标题</title>
+    <!--
+    通常我们使用window.onerror来捕获js脚本的错误信息。
+　　但是对于跨域调用的js脚本，onerror事件只会给出很少的报错信息：error: Script error.
+　　这个简单的信息很明显不足以看出脚本的具体错误，所以我们可以使用crossorigin属性，使得加载的跨域脚本可以得出跟同域脚本同样的报错信息：
+　　<script crossorigin  src="http://www.lmj.com/demo/crossoriginAttribute/error.js"></script>
+　　如果是这样，www.lmj.com的服务器必须给出一个Access-Control-Allow-Origin的header，否则无法访问此脚本。
+    -->
+    <script crossorigin src="https://cdn.bootcss.com/react/15.5.0/react.js"></script>
+    <script crossorigin src="https://cdn.bootcss.com/react/15.5.0/react-dom.js"></script>
+    <!--Babel REPL used to see the raw JavaScript code produced by the JSX compilation step.-->
+    <script crossorigin src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+</body>
+<script type="text/babel">
+    function renderContent(content) {
+        ReactDOM.render(
+                <h1>{content}</h1>,
+            document.getElementById('root')
+        );
+    }
+    renderContent('Hello React');
+</script>
+</html>
