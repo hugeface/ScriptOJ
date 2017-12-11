@@ -9,6 +9,10 @@
 　　这个简单的信息很明显不足以看出脚本的具体错误，所以我们可以使用crossorigin属性，使得加载的跨域脚本可以得出跟同域脚本同样的报错信息：
 　　<script crossorigin  src="http://www.lmj.com/demo/crossoriginAttribute/error.js"></script>
 　　如果是这样，www.lmj.com的服务器必须给出一个Access-Control-Allow-Origin的header，否则无法访问此脚本。
+    此处引入三个库：
+        react.js - React的核心库
+        react-dom.js - 提供与DOM相关的功能
+        babel.min.js - Babel可以将ES6代码转为ES5代码，这样就能在不支持ES6的浏览器上执行React代码。Babel内嵌了对JSX的支持。
     -->
     <script crossorigin src="https://cdn.bootcss.com/react/15.5.0/react.js"></script>
     <script crossorigin src="https://cdn.bootcss.com/react/15.5.0/react-dom.js"></script>
