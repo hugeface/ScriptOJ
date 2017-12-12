@@ -2,9 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>#2 用React.js构建未读消息组件</title>
 </head>
+<script crossorigin src="https://cdn.bootcss.com/react/15.5.0/react.js"></script>
+<script crossorigin src="https://cdn.bootcss.com/react/15.5.0/react-dom.js"></script>
+<script crossorigin src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
 <body>
-$END$
+<div id="root"></div>
 </body>
+<script type="text/babel">
+function getNotificationsCount() {
+    return Math.floor(Math.random() * 10) - 1;
+}
+class Notification extends React.Component {
+    render() {
+        const n = getNotificationsCount();
+//        String Templates in ES6 --- `${}`
+        return <span>{n > 0 ? `有(${n})条未读消息` : `没有未读消息`}</span>
+    };
+}
+function renderContent() {
+    ReactDOM.render(
+        <Notification/>,
+        document.getElementById('root')
+    );
+}
+renderContent();
+</script>
 </html>
